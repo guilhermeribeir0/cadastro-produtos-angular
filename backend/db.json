@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "name": "Mouse Pad Gamer",
+      "price": "129.99",
+      "id": 1
+    },
+    {
+      "name": "Mouse Gamer",
+      "price": "299.99",
+      "id": 2
+    },
+    {
+      "name": "Teclado Gamer",
+      "price": "349.99",
+      "id": 3
+    },
+    {
+      "name": "Monitor Gamer",
+      "price": "799.99",
+      "id": 4
+    }
+  ]
+}
