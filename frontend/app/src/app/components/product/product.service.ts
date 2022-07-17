@@ -35,4 +35,14 @@ export class ProductService {
         return this.httpClient.get<Product>(url);
     }
 
+    update(product: Product): Observable<Product> {
+        const url = `${this.baseUrl}/${product}`;
+        return this.httpClient.put<Product>(url, product);
+    }
+
+    delete(id: number): Observable<Product> {
+        const url = `${this.baseUrl}/${id}`;
+        return this.httpClient.delete<Product>(url);
+    }
+
 }
