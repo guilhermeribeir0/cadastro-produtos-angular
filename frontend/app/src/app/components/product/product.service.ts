@@ -26,6 +26,13 @@ export class ProductService {
         return this.httpClient.post<Product>(this.baseUrl, product);
     }
 
-    
+    read(): Observable<Product[]> {
+        return this.httpClient.get<Product[]>(this.baseUrl);
+    }
+
+    readById(id: string): Observable<Product> {
+        const url = `${this.baseUrl}/${id}`;
+        return this.httpClient.get<Product>(url);
+    }
 
 }
