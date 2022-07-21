@@ -24,6 +24,8 @@ import { ProductUpdateComponent } from './components/product/product-update/prod
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
+import { HomeComponent } from './views/home/home.component';
+import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ProductReadComponent } from './components/product/product-read/product-
     ProductReadComponent,
     ProductCreateComponent,
     ProductDeleteComponent,
-    ProductUpdateComponent
+    ProductUpdateComponent,
+    HomeComponent,
+    ProductCrudComponent
   ],
   imports: [
     BrowserModule,
