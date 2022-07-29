@@ -1,7 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from './../product.service';
 import { Product } from './../product.module';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Provider } from '@angular/core';
 
 @Component({
   selector: 'app-product-update',
@@ -10,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductUpdateComponent implements OnInit {
 
-  product!: Product;
+  product: Product = {
+    name: '',
+    price: 0.00
+  }
 
   constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
 
