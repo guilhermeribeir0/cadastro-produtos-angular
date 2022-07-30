@@ -16,9 +16,19 @@
       "id": 3
     },
     {
-      "name": "Monitor Gamer",
+      "name": "Monitor Gamer - 23 Polegadas",
       "price": "899.99",
       "id": 4
+    },
+    {
+      "name": "Cadeira Gamer",
+      "price": "1499.99",
+      "id": 5
+    },
+    {
+      "name": "Monitor Gamer - 27 Polegadas",
+      "price": "1699.99",
+      "id": 6
     }
   ]
 }
