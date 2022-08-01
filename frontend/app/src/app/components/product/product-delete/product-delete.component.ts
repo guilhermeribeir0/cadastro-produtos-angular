@@ -12,7 +12,8 @@ export class ProductDeleteComponent implements OnInit {
 
   product: Product = {
     name: '',
-    price: 0.00
+    price: 0.00,
+    reference: ''
   }
 
   constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
