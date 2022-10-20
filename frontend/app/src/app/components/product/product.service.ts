@@ -2,7 +2,7 @@ import { Product } from './product.module';
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from 'rxjs';
+import { delay, Observable } from 'rxjs';
 
 @Injectable ({
     providedIn: 'root'
@@ -27,7 +27,7 @@ export class ProductService {
     }
 
     read(): Observable<Product[]> {
-        return this.httpClient.get<Product[]>(this.baseUrl);
+        return this.httpClient.get<Product[]>(this.baseUrl).pipe(delay(2000));
     }
 
     readById(id: string): Observable<Product> {

@@ -18,6 +18,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -60,7 +61,8 @@ import { FooterComponent } from './components/template/footer/footer.component';
     MatPaginatorModule,
     MatSortModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

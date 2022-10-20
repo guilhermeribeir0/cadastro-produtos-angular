@@ -10,3 +10,11 @@ table {
 .delete > i {
     color: #e35e6b;  
 }
+
+.loading-spinner {
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
