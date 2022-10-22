@@ -20,7 +20,7 @@ export class ProductReadComponent implements OnInit {
   constructor(private productService: ProductService, private dialog: MatDialog) {
     this.products$ = this.productService.read().pipe(
       catchError(error => {
-        this.onError('Erro loading product list')
+        this.onError('Error loading product list.')
         return of([])
       })
     );
