@@ -17,6 +17,7 @@ import { ProductReadComponent } from './components/product/product-read/product-
 import { HomeComponent } from './views/home/home.component';
 import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 import { FooterComponent } from './components/template/footer/footer.component';
+import { ErrorDialogComponent } from './components/shared/components/error-dialog/error-dialog.component';
 
 import { MaterialModule } from './components/shared/material/material.module';
 
@@ -31,7 +32,8 @@ import { MaterialModule } from './components/shared/material/material.module';
     ProductUpdateComponent,
     HomeComponent,
     ProductCrudComponent,
-    FooterComponent
+    FooterComponent,
+    ErrorDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -12,11 +12,14 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
 
 
 
 @NgModule({
   exports: [
+    FormsModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
@@ -29,10 +32,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSortModule,
     MatTableModule,
     MatToolbarModule,
-    FormsModule
+    MatDialogModule
   ],
   imports: [
-  
+    CommonModule
   ]
 })
 export class MaterialModule { }
