@@ -1,3 +1,11 @@
-Sistema de cadastro de produtos com base no Curso da COD3R. 
+<h2>CRUD de Produtos com Java + Angular</h2>
 
-#### Curso disponível em: https://www.cod3r.com.br/  ####
+<h4>Funcionalidades</h4>
+
+<ul>
+  <li>Cadastrar um produto</li>
+  <li>Listar os produtos</li>
+  <li>Atualizar um produto</li>
+  <li>Excluir um produto</li>
+</ul>  
+
