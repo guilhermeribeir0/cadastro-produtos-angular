@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { HttpClient } from "@angular/common/http";
 import { delay, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable ({
     providedIn: 'root'
@@ -10,7 +11,7 @@ import { delay, Observable } from 'rxjs';
 
 export class ProductService {
 
-    baseUrl = "http://localhost:8080/products"
+    private readonly baseUrl = 'api/products';
 
     constructor(private snackBar: MatSnackBar, private httpClient: HttpClient) { }
     
