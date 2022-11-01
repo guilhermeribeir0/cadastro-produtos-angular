@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/products")
+@RequestMapping(value = "/api")
 @AllArgsConstructor
 public class ProductController {
 
     private final ProductRepository productRepository;
 
-    @GetMapping
+    @GetMapping(value = "/products")
     public List<Product> productList() {
         return productRepository.findAll();
     }
