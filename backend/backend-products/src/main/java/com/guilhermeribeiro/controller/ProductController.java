@@ -3,9 +3,7 @@ package com.guilhermeribeiro.controller;
 import com.guilhermeribeiro.model.Product;
 import com.guilhermeribeiro.repository.ProductRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,6 +17,11 @@ public class ProductController {
     @GetMapping(value = "/products")
     public List<Product> productList() {
         return productRepository.findAll();
+    }
+
+    @PostMapping(value = "/products")
+    public void newProduct(@RequestBody Product product) {
+        productRepository.save(product);
     }
 
 }

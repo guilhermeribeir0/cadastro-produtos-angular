@@ -15,18 +15,4 @@ public class BackendProductsApplication {
 		SpringApplication.run(BackendProductsApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner initDatabase(ProductRepository productRepository) {
-		return args -> {
-			productRepository.deleteAll();
-
-			Product product = new Product();
-			product.setName("Mouse Gamer");
-			product.setReference("HDJ584DG");
-			product.setPrice(1499.99);
-
-			productRepository.save(product);
-		};
-	}
-
 }
