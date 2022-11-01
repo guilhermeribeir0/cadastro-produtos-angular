@@ -1,8 +1,14 @@
 package com.guilhermeribeiro.controller;
 
 import com.guilhermeribeiro.model.Product;
+import com.guilhermeribeiro.model.ProductDTO;
 import com.guilhermeribeiro.repository.ProductRepository;
+import com.guilhermeribeiro.service.ProductService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +18,11 @@ import java.util.List;
 @AllArgsConstructor
 public class ProductController {
 
+    @Autowired
     private final ProductRepository productRepository;
+
+    @Autowired
+    private final ProductService productService;
 
     @GetMapping(value = "/products")
     public List<Product> productList() {
@@ -20,8 +30,9 @@ public class ProductController {
     }
 
     @PostMapping(value = "/products")
-    public void newProduct(@RequestBody Product product) {
-        productRepository.save(product);
+    public @ResponseBody ResponseEntity<Void> create(@RequestBody ProductDTO productDTO) {
+        productService.newProduct(productDTO);
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
 }
