@@ -2,8 +2,10 @@ package com.guilhermeribeiro.doc;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -24,10 +26,19 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.guilhermeribeiro.controller"))
                 .paths(PathSelectors.any())
                 .build()
+                .apiInfo(buildApiInfo())
                 .consumes(new HashSet<String>(Arrays.asList("application/json")))
                 .produces(new HashSet<String>(Arrays.asList("application/json")));
 
         return docket;
+    }
+
+    private ApiInfo buildApiInfo() {
+        return new ApiInfoBuilder()
+                .title("API Products")
+                .description("API for product management")
+                .version("1.0.2")
+                .build();
     }
 }
 
