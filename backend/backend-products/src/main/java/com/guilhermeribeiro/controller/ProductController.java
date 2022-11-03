@@ -2,10 +2,8 @@ package com.guilhermeribeiro.controller;
 
 import com.guilhermeribeiro.model.Product;
 import com.guilhermeribeiro.model.ProductDTO;
-import com.guilhermeribeiro.repository.ProductRepository;
 import com.guilhermeribeiro.service.ProductService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
