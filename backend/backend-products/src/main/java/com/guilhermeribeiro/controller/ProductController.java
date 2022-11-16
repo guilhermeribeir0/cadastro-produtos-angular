@@ -1,8 +1,7 @@
 package com.guilhermeribeiro.controller;
 
 import com.guilhermeribeiro.model.Product;
-import com.guilhermeribeiro.model.ProductDTO;
-import com.guilhermeribeiro.service.ProductService;
+import com.guilhermeribeiro.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,17 +16,16 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    private final ProductService productService;
+    private final ProductRepository productRepository;
 
     @GetMapping
     public List<Product> productList() {
-        return productService.productList();
+        return productRepository.findAll();
     }
 
     @PostMapping
-    public @ResponseBody ResponseEntity<Void> create(@RequestBody ProductDTO productDTO) {
-        productService.createNewProduct(productDTO);
-        return new ResponseEntity<Void>(HttpStatus.OK);
+    public ResponseEntity<Product> createProduct(@RequestBody Product product) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(productRepository.save(product));
     }
 
 }
