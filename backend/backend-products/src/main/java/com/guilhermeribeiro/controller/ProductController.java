@@ -23,6 +23,13 @@ public class ProductController {
         return productRepository.findAll();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Product> findBYId(@PathVariable Long id) {
+        return productRepository.findById(id)
+                .map(product -> ResponseEntity.ok().body(product))
+                .orElse(ResponseEntity.notFound().build());
+    }
+
     @PostMapping
     public ResponseEntity<Product> createProduct(@RequestBody Product product) {
         return ResponseEntity.status(HttpStatus.CREATED).body(productRepository.save(product));
