@@ -1,20 +1,20 @@
 <mat-card>
     <mat-card-title>Novo Produto</mat-card-title>
-    <form>
+    <form [formGroup]="productForm" (ngSubmit)="createProduct()">
         <mat-form-field>
-            <input matInput placeholder="Nome" 
-                [(ngModel)]="product.name" name="name">
+            <mat-label for="name">Name</mat-label>
+            <input matInput id="name" type="text" formControlName="name">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Referência" 
-                [(ngModel)]="product.reference" name="reference">
+            <mat-label for="reference">Reference</mat-label>
+            <input matInput id="reference" type="text" formControlName="reference">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Preço (R$)" 
-                [(ngModel)]="product.price" name="price">
+            <mat-label for="price">Price</mat-label>
+            <input matInput id="price" type="text" formControlName="price">
         </mat-form-field>
     </form>
-    <button mat-raised-button (click)="createProduct()" color="primary">
+    <button mat-raised-button type="submit" [disabled]="!productForm.valid" color="primary">
         Salvar
     </button>
     
