@@ -13,12 +13,14 @@
             <mat-label for="price">Price</mat-label>
             <input matInput id="price" type="text" formControlName="price">
         </mat-form-field>
+        <div>
+            <button mat-raised-button type="submit" [disabled]="!productForm.valid" color="primary">
+                Salvar
+            </button>
+            
+            <button mat-raised-button (click)="cancel()">
+                Cancelar
+            </button>
+        </div>
     </form>
-    <button mat-raised-button type="submit" [disabled]="!productForm.valid" color="primary">
-        Salvar
-    </button>
-    
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
 </mat-card>

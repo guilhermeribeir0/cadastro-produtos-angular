@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from './../product.service';
 import { Product } from './../product.module';
 import { Component, OnInit } from '@angular/core';
@@ -19,16 +19,17 @@ export class ProductCreateComponent implements OnInit {
     price: new FormControl(Number(''), [Validators.required, Validators.min(0.01)])
   })
 
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    
   }
 
   createProduct(): void {
     const product = this.productForm.value as Product;
     this.productService.create(product).subscribe(() => {
-      this.productService.showMessage('Produto Criado!')
-      this.router.navigate(['/products'])
+      this.productService.showMessage('Produto Criado!');
+      this.router.navigate(['/products']);
     })
 
   }
