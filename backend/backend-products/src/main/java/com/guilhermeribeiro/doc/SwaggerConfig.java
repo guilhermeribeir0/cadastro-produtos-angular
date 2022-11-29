@@ -37,7 +37,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("API Products")
                 .description("API for product management")
-                .version("1.0.2")
+                .version("1.0.4")
                 .build();
     }
 }
