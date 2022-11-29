@@ -19,7 +19,7 @@ export class ProductCreateComponent implements OnInit {
     price: new FormControl(Number(''), [Validators.required, Validators.min(0.01)])
   })
 
-  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
     
