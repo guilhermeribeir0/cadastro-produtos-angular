@@ -1,3 +1,4 @@
+import { AlertsService } from './../alerts.service';
 import { Product } from './../product.module';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from './../product.service';
@@ -16,7 +17,7 @@ export class ProductDeleteComponent implements OnInit {
     reference: ''
   }
 
-  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute, private alertsService: AlertsService) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -27,8 +28,11 @@ export class ProductDeleteComponent implements OnInit {
 
   deleteProduct(): void {
     this.productService.delete(this.product.id!).subscribe(() => {
-      this.productService.showMessage('Produto excluido com sucesso!');
+      this.alertsService.alertSucess('Produto excluido com sucesso!');
       this.router.navigate(['/products']);
+    }, (error) => {
+      this.alertsService.alertErro('Verifique as informações e tente novamente.');
+      console.error(error);
     });
   }
 

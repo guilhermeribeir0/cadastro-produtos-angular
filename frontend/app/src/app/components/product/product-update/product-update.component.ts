@@ -1,3 +1,4 @@
+import { AlertsService } from './../alerts.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from './../product.service';
 import { Product } from './../product.module';
@@ -16,7 +17,7 @@ export class ProductUpdateComponent implements OnInit {
     reference: ''
   }
 
-  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute, private alertsService: AlertsService) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -27,9 +28,12 @@ export class ProductUpdateComponent implements OnInit {
 
   updateProduct(): void {
     this.productService.update(this.product).subscribe(() => {
-      this.productService.showMessage('Produto atualizado com sucesso!');
+      this.alertsService.alertSucess('Produto atualizado com sucesso!');
       this.router.navigate(['/products']);
-    })
+    }, (error) => {
+      this.alertsService.alertErro('Verifique as informações e tente novamente.');
+      console.error(error);
+    });
   }
 
   cancel(): void {
