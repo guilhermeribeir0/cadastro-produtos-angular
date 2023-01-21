@@ -3,6 +3,7 @@ import { Product } from './../product.module';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product-delete',
@@ -27,12 +28,29 @@ export class ProductDeleteComponent implements OnInit {
   }
 
   deleteProduct(): void {
-    this.productService.delete(this.product.id!).subscribe(() => {
-      this.alertsService.alertSucess('Produto excluido com sucesso!');
-      this.router.navigate(['/products']);
-    }, (error) => {
-      this.alertsService.alertErro('Verifique as informações e tente novamente.');
-      console.error(error);
+    Swal.fire({
+      title: 'Tem certeza?',
+      text: "Isso não poderá ser revertido!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Sim, pode excluir!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.productService.delete(this.product.id!).subscribe(() => {
+          this.router.navigate(['/products']);
+        }, (error) => {
+          this.alertsService.alertErro('Verifique as informações e tente novamente.');
+          console.error(error);
+        });
+        Swal.fire(
+          'Excluído!',
+          'Produto excluído com sucesso!',
+          'success'
+        )
+      }
     });
   }
 
