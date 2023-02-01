@@ -1,9 +1,8 @@
+import { AlertsService } from './../alerts.service';
 import { ProductService } from './../product.service';
 import { Product } from './../product.module';
 import { Component, OnInit } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
-import { MatDialog } from '@angular/material/dialog';
-import { ErrorDialogComponent } from '../../shared/components/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-product-read',
@@ -17,19 +16,13 @@ export class ProductReadComponent implements OnInit {
   products: Product[] = [];
   displayedColumns = ['id', 'name', 'reference', 'price', 'action']
 
-  constructor(private productService: ProductService, private dialog: MatDialog) {
+  constructor(private productService: ProductService, private alertsService: AlertsService) {
     this.products$ = this.productService.read().pipe(
       catchError(error => {
-        this.onError('Error loading product list.')
+        this.alertsService.alertErro('Não foi possível carregar os itens.')
         return of([])
       })
     );
-  }
-
-  onError(errormsg: string) {
-    this.dialog.open(ErrorDialogComponent, {
-      data: errormsg
-    });
   }
 
   ngOnInit(): void {

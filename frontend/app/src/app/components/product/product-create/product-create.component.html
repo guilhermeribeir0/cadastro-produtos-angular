@@ -7,14 +7,14 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label for="reference">Reference</mat-label>
-            <input matInput id="reference" type="text" formControlName="reference">
+            <input matInput placeholder="Ex: AAAA1111" id="reference" type="text" formControlName="reference">
         </mat-form-field>
         <mat-form-field>
             <mat-label for="price">Price</mat-label>
-            <input matInput id="price" type="text" formControlName="price">
+            <input matInput placeholder="Ex: 199.00" id="price" type="text" formControlName="price">
         </mat-form-field>
         <div>
-            <button mat-raised-button type="submit" [disabled]="!productForm.valid" color="primary">
+            <button mat-raised-button class="save" type="submit" [disabled]="!productForm.valid">
                 Salvar
             </button>
             

@@ -23,7 +23,7 @@ public class ProductController {
         return productRepository.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Product> findProductById(@PathVariable Long id) {
         return productRepository.findById(id)
                 .map(product -> ResponseEntity.ok().body(product))
@@ -35,7 +35,7 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.CREATED).body(productRepository.save(product));
     }
 
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product product) {
         return productRepository.findById(id)
                 .map(productUp -> {
@@ -47,7 +47,7 @@ public class ProductController {
                 }).orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         return productRepository.findById(id)
                 .map(productDel -> {

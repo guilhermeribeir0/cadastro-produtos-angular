@@ -3,6 +3,11 @@ form {
     flex-direction: column;
 }
 
+.save {
+    background-color: rgb(68, 40, 170);
+    color: white;
+}
+
 button {
     margin-right: 14px;
     margin-top: 20px;

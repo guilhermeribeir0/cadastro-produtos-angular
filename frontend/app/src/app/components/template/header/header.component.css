@@ -1,7 +1,8 @@
 .header {
     display: flex;
     align-items: center;
-    background: rgb(27, 27, 27);
+    justify-content: center;
+    background: rgb(68, 40, 170);
 }
 
 .header a {
@@ -11,8 +12,7 @@
 }
 
 .header h1 {
-    font-size: 26px;
-    color: white;
+    font-size: 40px;
 }
 
 .header .title-group {
@@ -22,4 +22,17 @@
 
 .header .title-group i {
     padding-right: 6px;
+}
+
+#cad {
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px 0px 0px 8px;
+}
+
+#prod {
+    background-color: white;
+    color: rgb(68, 40, 170);
+    border: 2px solid white;
+    border-radius: 0px 8px 8px 0px;
 }

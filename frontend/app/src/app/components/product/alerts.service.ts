@@ -9,18 +9,20 @@ export class AlertsService {
   constructor() { }
 
   alertSucess(msg: string) {
-    Swal.fire(
-      'Parabéns!',
-      msg,
-      'success'
-    );
+    Swal.fire({
+      icon: 'success',
+      title: 'Parabéns!',
+      text: msg,
+      confirmButtonColor: '#4428AA'
+    });
   }
 
   alertErro(msg: string) {
-    Swal.fire(
-      'Ops!',
-      msg,
-      'error'
-    );
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: msg,
+      confirmButtonColor: '#4428AA'
+    });
   }
 }
