@@ -33,7 +33,7 @@ export class ProductDeleteComponent implements OnInit {
       text: "Isso não poderá ser revertido!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#4428AA',
+      confirmButtonColor: '#1A6AFF',
       cancelButtonColor: '#d33',
       cancelButtonText: 'Cancelar',
       confirmButtonText: 'Sim, pode excluir!'

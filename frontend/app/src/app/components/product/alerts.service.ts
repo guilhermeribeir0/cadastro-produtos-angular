@@ -13,7 +13,7 @@ export class AlertsService {
       icon: 'success',
       title: 'Parabéns!',
       text: msg,
-      confirmButtonColor: '#4428AA'
+      confirmButtonColor: '#1A6AFF'
     });
   }
 
@@ -22,7 +22,7 @@ export class AlertsService {
       icon: 'error',
       title: 'Oops...',
       text: msg,
-      confirmButtonColor: '#4428AA'
+      confirmButtonColor: '#1A6AFF'
     });
   }
 }
