@@ -13,6 +13,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 
 
@@ -32,7 +33,8 @@ import { CommonModule } from '@angular/common';
     MatSortModule,
     MatTableModule,
     MatToolbarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule
   ],
   imports: [
     CommonModule

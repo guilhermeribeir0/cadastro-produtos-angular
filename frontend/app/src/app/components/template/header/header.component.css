@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(68, 40, 170);
+    background: #1A6AFF;
 }
 
 .header a {
@@ -32,7 +32,7 @@
 
 #prod {
     background-color: white;
-    color: rgb(68, 40, 170);
+    color: #1A6AFF;
     border: 2px solid white;
     border-radius: 0px 8px 8px 0px;
 }

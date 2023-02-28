@@ -1,9 +1,17 @@
-.home .title {
-    font-size: 3rem;
-    font-weight: 300;
-    line-height: 1.2;
+.titulo {
+    font-size: 2rem;
+    font-weight: 500;
 }
 
-.home .subtitle {
-    font-size: 1.1rem;
+mat-icon {
+    color: #1A6AFF;
+}
+
+.topico {
+    font-size: 1.4rem;
+}
+
+.lista {
+    margin-left: 10px;
+    font-size: 1.2rem;
 }
