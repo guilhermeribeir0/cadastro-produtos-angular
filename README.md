@@ -1,4 +1,4 @@
-<h2>CRUD de Produtos com Java + Angular</h2>
+<h2>CRUD de Produtos</h2>
 
 <h3>Funcionalidades</h3>
 
